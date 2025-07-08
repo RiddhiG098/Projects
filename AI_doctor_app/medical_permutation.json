@@ -1,0 +1,92 @@
+{
+  "Fever": {
+    "Chills, Fatigue": {
+      "Disease": "Influenza",
+      "Treatment": ["Oseltamivir within 48 h", "Rest and hydration", "Acetaminophen/ibuprofen"],
+      "Notes": "Antivirals shorten illness by ~1 day and reduce complications",
+      "IsCommon": true,
+      "HealingTimeInDays": 7
+    },
+    "Sweating, Body Ache": {
+      "Disease": "Malaria",
+      "Treatment": ["ACT (e.g., artemether‑lumefantrine)", "IV artesunate for severe cases"],
+      "Notes": "WHO recommends ACT as first-line therapy",
+      "IsCommon": false,
+      "HealingTimeInDays": 10
+    },
+    "Headache": {
+      "Disease": "Typhoid Fever",
+      "Treatment": ["Ceftriaxone or Azithromycin", "Maintain hydration"],
+      "Notes": "Often linked to travel or contaminated food/water",
+      "IsCommon": false,
+      "HealingTimeInDays": 14
+    },
+    "Sweating, Fatigue": {
+      "Disease": "Dengue Fever",
+      "Treatment": ["Symptomatic care", "Avoid NSAIDs; monitor platelets"],
+      "Notes": "Watch for hemorrhage in severe cases",
+      "IsCommon": false,
+      "HealingTimeInDays": 10
+    },
+    "Default": {
+      "Disease": "General Febrile Illness",
+      "Treatment": ["Supportive care: rest, fluids, acetaminophen/ibuprofen"],
+      "Notes": "Seek medical care if fever >3 days or warning signs present",
+      "IsCommon": true,
+      "HealingTimeInDays": 3
+    }
+  },
+  "Cough": {
+    "Chest Pain, Shortness of Breath": {
+      "Disease": "Pneumonia",
+      "Treatment": ["Amoxicillin or equivalent antibiotic", "Rest and hydration"],
+      "Notes": "Watch for fever, productive cough, difficulty breathing",
+      "IsCommon": false,
+      "HealingTimeInDays": 14
+    },
+    "Wheezing, Fatigue": {
+      "Disease": "Asthma",
+      "Treatment": ["Inhaled β₂‑agonists", "Corticosteroids"],
+      "Notes": "Often triggered by allergens or cold air",
+      "IsCommon": true,
+      "HealingTimeInDays": "Chronic condition"
+    },
+    "Chest Pain, Fatigue": {
+      "Disease": "Bronchitis",
+      "Treatment": ["Rest, hydration", "Cough suppressants", "Bronchodilators if needed"],
+      "Notes": "Common post-cold viral condition",
+      "IsCommon": true,
+      "HealingTimeInDays": 7
+    },
+    "Default": {
+      "Disease": "General Cough/Flu-like Illness",
+      "Treatment": ["OTC cough syrup", "Rest, fluids"],
+      "Notes": "If persistent >3 weeks, seek evaluation",
+      "IsCommon": true,
+      "HealingTimeInDays": 5
+    }
+  },
+  "Rash": {
+    "Itching, Redness": {
+      "Disease": "Allergic Reaction",
+      "Treatment": ["Antihistamines (e.g., cetirizine)", "Avoid known allergens"],
+      "Notes": "Consider topical steroids or emergency care if swelling spreads",
+      "IsCommon": true,
+      "HealingTimeInDays": 3
+    },
+    "Blisters, Swelling": {
+      "Disease": "Chickenpox",
+      "Treatment": ["Acyclovir if early", "Calamine lotion", "Isolate until crusted"],
+      "Notes": "Highly contagious; vaccination reduces severity",
+      "IsCommon": false,
+      "HealingTimeInDays": 10
+    },
+    "Default": {
+      "Disease": "General Rash",
+      "Treatment": ["Topical corticosteroids", "Moisturizers", "Avoid irritants"],
+      "Notes": "See a dermatologist if unclear or persistent",
+      "IsCommon": true,
+      "HealingTimeInDays": 5
+    }
+  }
+}
