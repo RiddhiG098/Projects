@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Doctor Diagnosis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>🩺 AI Doctor</h1>
+        <p class="tagline">Your intelligent health assistant</p>
+
+        <form method="post">
+            <div class="form-section">
+                <label for="primary">1️⃣ Select Primary Symptom:</label>
+                <select name="primary" id="primary" onchange="this.form.submit()">
+                    <option value="">-- Choose --</option>
+                    {% for item in primary_symptoms %}
+                        <option value="{{ item }}" {% if item == selected_primary %}selected{% endif %}>{{ item }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            {% if secondary_symptoms %}
+            <div class="form-section">
+                <label for="secondary">2️⃣ Select Secondary Symptom:</label>
+                <select name="secondary" required>
+                    {% for s in secondary_symptoms %}
+                        <option value="{{ s }}" {% if s == selected_secondary %}selected{% endif %}>{{ s }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Diagnose</button>
+            </div>
+            {% endif %}
+        </form>
+
+        {% if diagnosis %}
+        <div class="result">
+            <h2>➡️ Diagnosis for {{ diagnosis.combo }}:</h2>
+            <p><strong>Disease:</strong> {{ diagnosis.disease }}</p>
+            <p><strong>Treatment:</strong></p>
+            <ul>
+                {% for t in diagnosis.treatment %}
+                <li>{{ t }}</li>
+                {% endfor %}
+            </ul>
+            <p><strong>Notes:</strong> {{ diagnosis.notes }}</p>
+            <p><strong>Common Disease:</strong> {{ diagnosis.common }}</p>
+            <p><strong>Expected Healing Time:</strong> {{ diagnosis.healing }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
